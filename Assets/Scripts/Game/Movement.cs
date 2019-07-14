@@ -13,12 +13,15 @@ public class Movement : MonoBehaviour
 
 	private void Update()
 	{
-		var movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-
-		if (movement.magnitude > SpeedAccuracy)
+		if (Mathf.Abs(m_speed) > SpeedAccuracy)
 		{
-			transform.forward = movement.normalized;
-			transform.Translate(transform.forward * m_speed, Space.World);
+			var movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+			if (movement.magnitude > SpeedAccuracy)
+			{
+				transform.forward = movement.normalized;
+				transform.Translate(transform.forward * m_speed, Space.World);
+			}
 		}
 	}
 }

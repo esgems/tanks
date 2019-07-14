@@ -17,13 +17,9 @@ public class LookTarget : MonoBehaviour
 	[SerializeField]
 	private Transform _target;
 
-	public void SetObserver(Transform observer)
+	public void Init(Transform observer, Transform target)
 	{
 		_observer = observer;
-	}
-
-	public void SetTarget(Transform target)
-	{
 		_target = target;
 	}
 

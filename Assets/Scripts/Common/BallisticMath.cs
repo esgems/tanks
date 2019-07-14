@@ -21,10 +21,15 @@ public static class BallisticMath
 				velocityFactor = -velocityFactor;
 			}
 
-			angle = (velocitySquare + velocityFactor) / (m_gravity * distance);
-			angle = -Mathf.Atan(angle) * Mathf.Rad2Deg;
+			var distGrav = m_gravity * distance;
 
-			return true;
+			if (distGrav != 0)
+			{
+				angle = (velocitySquare + velocityFactor) / distGrav;
+				angle = -Mathf.Atan(angle) * Mathf.Rad2Deg;
+
+				return true;
+			}
 		}
 
 		angle = 0;

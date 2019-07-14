@@ -84,7 +84,7 @@ namespace Entities
 					var direction = (targetPos - transform.position).normalized;
 					direction.y = 0;
 
-					var verticalAngleClamped = Mathf.Clamp(verticalAngle, 0f, m_verticalAngleLimit);
+					var verticalAngleClamped = m_verticalAngleLimit == -1 ? verticalAngle : Mathf.Clamp(verticalAngle, 0f, m_verticalAngleLimit);
 
 					m_gun.localRotation = Quaternion.Euler(-verticalAngleClamped, 0, 0);
 
@@ -106,7 +106,7 @@ namespace Entities
 						m_owner.LookTo(direction);
 					}
 
-					m_trajectoryRenderer.DrawTrajectory(startPos, m_gun.forward, m_bulletVelocity, targetPos, availableShot);
+					m_trajectoryRenderer.DrawTrajectory(startPos, m_gun.forward, m_bulletVelocity, targetPos);
 				}
 			}
 

@@ -42,8 +42,7 @@ namespace Game
 
 			if (lookTarget != null)
 			{
-				lookTarget.SetObserver(Camera.main.transform);
-				lookTarget.SetTarget(target);
+				lookTarget.Init(Camera.main.transform, target);
 			}
 		}
 

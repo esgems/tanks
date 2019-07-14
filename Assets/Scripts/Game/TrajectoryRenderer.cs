@@ -12,12 +12,6 @@ public class TrajectoryRenderer : MonoBehaviour
 	[SerializeField]
 	private float m_accuracy = 2;
 
-	[SerializeField]
-	private Color m_normalColor = Color.green;
-
-	[SerializeField]
-	private Color m_impossibleColor = Color.red;
-
 	public void Clear()
 	{
 		if (m_lineRenderer != null)
@@ -27,7 +21,7 @@ public class TrajectoryRenderer : MonoBehaviour
 		}
 	}
 
-	public void DrawTrajectory(Vector3 startPos, Vector3 direction, float velocity, Vector3 targetPos, bool availableShot)
+	public void DrawTrajectory(Vector3 startPos, Vector3 direction, float velocity, Vector3 targetPos)
 	{
 		if (m_lineRenderer == null)
 		{
@@ -53,17 +47,6 @@ public class TrajectoryRenderer : MonoBehaviour
 			}
 
 			positions.Add(position);
-		}
-
-		if (availableShot)
-		{
-			m_lineRenderer.startColor = m_normalColor;
-			m_lineRenderer.endColor = m_normalColor;
-		}
-		else
-		{
-			m_lineRenderer.startColor = m_impossibleColor;
-			m_lineRenderer.endColor = m_impossibleColor;
 		}
 
 		m_lineRenderer.positionCount = positions.Count;
