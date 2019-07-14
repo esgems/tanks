@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ebf335d0a3ca1c44b9a3e6dc6f13fdc, type: 3}
+  m_Name: TankConfig1
+  m_EditorClassIdentifier: 
+  tankObject: {fileID: 1160837569, guid: 184d8692bda6c6f4681c7225235d1791, type: 3}
+  weapon: {fileID: 11400000, guid: 8a6a000910623db4ab34d729d63ea323, type: 2}
+  movementSpeed: 0.1
+  rotationSpeed: 100
